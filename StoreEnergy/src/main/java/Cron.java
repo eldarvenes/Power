@@ -22,7 +22,7 @@ public class Cron {
 		JobDetail saveReportToWeb = newJob(PostEnergyToWeb.class).withIdentity("saveReportToWeb", "group1")
 				.build();
 		
-		//Kvar time
+		//Kvart sekund, lagre til database 
 		Trigger trigger_storeKwh = newTrigger()
 				.withIdentity("trigger_storeKwh", "group1")
 				.startNow()				
