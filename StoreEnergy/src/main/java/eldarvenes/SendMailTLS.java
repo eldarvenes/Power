@@ -1,3 +1,4 @@
+package eldarvenes;
 import java.util.Properties;
 
 import javax.mail.Message;

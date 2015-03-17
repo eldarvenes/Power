@@ -1,3 +1,4 @@
+package eldarvenes;
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
@@ -26,21 +27,21 @@ public class Cron {
 		Trigger trigger_storeKwh = newTrigger()
 				.withIdentity("trigger_storeKwh", "group1")
 				.startNow()				
-				.withSchedule(cronSchedule("* * * * * ?"))								
+				.withSchedule(cronSchedule("0 0 * * * ?"))
 				.build();
 		
-		//Kvar time
+		//Kvart døgn kl 0100
 		Trigger trigger_sendReport = newTrigger()
 				.withIdentity("trigger_sendReport", "group1")
 				.startNow()				
-				.withSchedule(cronSchedule("0 0 01 * * ?"))								
+				.withSchedule(cronSchedule("0 0 1 * * ?"))
 				.build();
 		
-		//Kvart døgn kl 0600
+		//Den første i kvar måned
 		Trigger trigger_saveReportToWeb = newTrigger()
 				.withIdentity("trigger_saveReportToWeb", "group1")
 				.startNow()				
-				.withSchedule(cronSchedule("0 0 0 1 * ?"))								
+				.withSchedule(cronSchedule("0 0 0 1 * ?"))
 				.build();
 
 		System.out.println("Scheduler Started...");

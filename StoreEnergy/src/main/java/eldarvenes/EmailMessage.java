@@ -1,3 +1,4 @@
+package eldarvenes;
 public class EmailMessage {
 
 	private String from;
